@@ -1,42 +1,27 @@
 import React from "react";
 import userList from "../data/userList";
 import userImg from "../assets/user.png";
+import Users from "./Users";
 
-const UserList = () => {
+const UserList = (props) => {
+  const { onUserChange } = props;
+
+  const handleUserChange = (selectedUserId) => {
+    onUserChange(selectedUserId);
+  };
+
   const renderUserList = () => {
     return userList.map((user) => (
-      <div className="row userListBar-body" key={user.userId}>
-        <div className="col-sm-3 col-xs-3 userListBar-userpic">
-          <div className="user-pic">
-            <img
-              src={require(`../assets/${user.userPhotoUrl}`)}
-              alt={user.userName}
-            />
-          </div>
-        </div>
-        <div className="col-sm-9 col-xs-9 userListBar-main">
-          <div className="row">
-            <div className="col-sm-8 col-xs-8 userListBar-name">
-              <span className="user-name">{user.userName}</span>
-              <span className="user-user-message-highlight">
-                {user.lastMessage}
-              </span>
-            </div>
-            <div className="col-sm-4 col-xs-4 pull-right userListBar-time">
-              <span className="time-meta pull-right">
-                {user.lastMessageTime}
-              </span>
-              {user.pendingRead > 0 ? (
-                <span className="pending-user-message pull-right">
-                  {user.pendingRead}
-                </span>
-              ) : (
-                <></>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      <Users
+        key={user.userId}
+        userId={user.userId}
+        userPhotoUrl={user.userPhotoUrl}
+        userName={user.userName}
+        lastMessage={user.lastMessage}
+        lastMessageTime={user.lastMessageTime}
+        pendingRead={user.pendingRead}
+        onUserChange={handleUserChange}
+      />
     ));
   };
   return (

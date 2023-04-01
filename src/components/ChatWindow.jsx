@@ -1,15 +1,16 @@
-import user1Img from "../assets/user-1.jpg";
-const ChatWindow = () => {
+const ChatWindow = (props) => {
+  const { userName, userPhotoUrl } = props;
+
   return (
     <div className="col-sm-8 chatWindow">
       <div className="row chatHead">
         <div className="col-sm-1 col-md-1 col-xs-1 chatHead-userpic">
           <div className="chatHead-user-pic">
-            <img src={user1Img} alt="user-1" />
+            <img src={require(`../assets/${userPhotoUrl}`)} alt={userName} />
           </div>
         </div>
         <div className="col-sm-8 col-xs-7 chatHead-name">
-          <span className="chatHead-user-name">User 1</span>
+          <span className="chatHead-user-name">{userName}</span>
         </div>
         <div className="col-sm-1 col-xs-1  chatHead-dot pull-right">
           <i className="fa fa-search head-search"></i>
