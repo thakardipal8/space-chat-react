@@ -1,5 +1,17 @@
+import { useEffect, useState } from "react";
+import chats from "../data/chat";
+import ChatBox from "./ChatBox";
+
 const ChatWindow = (props) => {
-  const { userName, userPhotoUrl } = props;
+  const { userName, userPhotoUrl, userId } = props;
+  const [userChat, setUserChat] = useState([]);
+
+  useEffect(() => {
+    const userChats = chats.filter(
+      (chat) => chat.sender === userId || chat.receiver === userId
+    );
+    setUserChat(userChats);
+  }, [userId]);
 
   return (
     <div className="col-sm-8 chatWindow">
@@ -29,27 +41,14 @@ const ChatWindow = (props) => {
           </div>
         </div>
 
-        <div className="row user-message-body">
-          <div className="d-flex justify-content-start">
-            <div className="col-sm-12 user-message-main-receiveBox">
-              <div className="receiveBox">
-                <div className="user-message-text">Good Morning!</div>
-                <span className="user-message-time pull-right">9:45 AM</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="row user-message-body">
-          <div className="d-flex justify-content-end">
-            <div className="col-sm-12 user-message-main-sendBox">
-              <div className="sendBox">
-                <div className="user-message-text">Good evening...</div>
-                <span className="user-message-time pull-right">5:31 PM</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        {userChat.map((chat) => (
+          <ChatBox
+            key={chat.chatId}
+            message={chat.message}
+            time={chat.sendTime}
+            isSent={chat.receiver === userId}
+          />
+        ))}
       </div>
       <div className="row respond">
         <div className="col-sm-9 col-xs-9 respond-main">
