@@ -6,6 +6,7 @@ const userList = [
     lastMessage: "Hey dude...",
     lastMessageTime: "3:31PM",
     pendingRead: 1,
+    friendOf: 10,
   },
   {
     userId: 2,
@@ -14,6 +15,7 @@ const userList = [
     lastMessage: "Good morning...",
     lastMessageTime: "5:12PM",
     pendingRead: 0,
+    friendOf: 10,
   },
   {
     userId: 3,
@@ -22,6 +24,7 @@ const userList = [
     lastMessage: "How are you doing...",
     lastMessageTime: "11:31AM",
     pendingRead: 0,
+    friendOf: 10,
   },
   {
     userId: 4,
@@ -30,6 +33,7 @@ const userList = [
     lastMessage: "Whats up?",
     lastMessageTime: "09:03PM",
     pendingRead: 0,
+    friendOf: 10,
   },
   {
     userId: 5,
@@ -38,6 +42,7 @@ const userList = [
     lastMessage: "Hey dude...",
     lastMessageTime: "3:31PM",
     pendingRead: 1,
+    friendOf: 10,
   },
   {
     userId: 6,
@@ -46,6 +51,7 @@ const userList = [
     lastMessage: "Wanna join?",
     lastMessageTime: "5:12PM",
     pendingRead: 4,
+    friendOf: 10,
   },
   {
     userId: 7,
@@ -54,6 +60,7 @@ const userList = [
     lastMessage: "Nothing much..",
     lastMessageTime: "11:31AM",
     pendingRead: 2,
+    friendOf: 10,
   },
   {
     userId: 8,
@@ -62,6 +69,7 @@ const userList = [
     lastMessage: "Hi.....",
     lastMessageTime: "09:03PM",
     pendingRead: 0,
+    friendOf: 10,
   },
   {
     userId: 9,
@@ -70,6 +78,34 @@ const userList = [
     lastMessage: "Lets meet today",
     lastMessageTime: "09:03PM",
     pendingRead: 0,
+    friendOf: 10,
+  },
+  {
+    userId: 7,
+    userPhotoUrl: "user-7.jpg",
+    userName: "User 7",
+    lastMessage: "Nothing much..",
+    lastMessageTime: "11:31AM",
+    pendingRead: 2,
+    friendOf: 11,
+  },
+  {
+    userId: 8,
+    userPhotoUrl: "user-8.jpg",
+    userName: "User 8",
+    lastMessage: "Hi.....",
+    lastMessageTime: "09:03PM",
+    pendingRead: 0,
+    friendOf: 11,
+  },
+  {
+    userId: 9,
+    userPhotoUrl: "user-9.png",
+    userName: "User 9",
+    lastMessage: "Lets meet today",
+    lastMessageTime: "09:03PM",
+    pendingRead: 0,
+    friendOf: 11,
   },
 ];
 

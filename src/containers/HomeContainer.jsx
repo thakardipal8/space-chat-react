@@ -3,7 +3,8 @@ import ChatWindow from "../components/ChatWindow";
 import UserList from "../components/UserList";
 import users from "../data/userList";
 
-const HomeContainer = () => {
+const HomeContainer = (props) => {
+  const { friendOf } = props;
   const [userName, setUserName] = useState("User 1");
   const [userPhotoUrl, setUserPhotoUrl] = useState("user-1.jpg");
   const [userId, setUserId] = useState(1);
@@ -26,7 +27,7 @@ const HomeContainer = () => {
     <div className="main-container">
       <div className="container chatApp">
         <div className="row chatApp-one">
-          <UserList onUserChange={handleUserIdChange} />
+          <UserList onUserChange={handleUserIdChange} friendOf={friendOf} />
           <ChatWindow
             userName={userName}
             userId={userId}

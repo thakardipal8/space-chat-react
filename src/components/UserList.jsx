@@ -4,14 +4,15 @@ import userImg from "../assets/user.png";
 import Users from "./Users";
 
 const UserList = (props) => {
-  const { onUserChange } = props;
+  const { onUserChange, friendOf } = props;
 
   const handleUserChange = (selectedUserId) => {
     onUserChange(selectedUserId);
   };
 
   const renderUserList = () => {
-    return userList.map((user) => (
+    const users = userList.filter((user) => user.friendOf === friendOf);
+    return users.map((user) => (
       <Users
         key={user.userId}
         userId={user.userId}

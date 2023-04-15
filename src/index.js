@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import HomeContainer from "./containers/HomeContainer";
+import "./styles/index.css";
+import LoginContainer from "./containers/LoginContainer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <HomeContainer />
+    <LoginContainer />
   </React.StrictMode>
 );
